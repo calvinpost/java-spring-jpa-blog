@@ -12,6 +12,8 @@ public class Post {
     private Long id;
     private String title;
     private String lead;
+    @ManyToOne
+    private Category category;
     @Column(length=1000000)
     @Lob
     private String body;
@@ -56,6 +58,10 @@ public class Post {
     public void setLead(String lead) {
         this.lead = lead;
     }
+
+    public Category getCategory() { return category; }
+
+    public void setCategory(Category category) { this.category = category; }
 
     public String getBody() {
         return body;
